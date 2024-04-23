@@ -1,11 +1,12 @@
 /**
- * @description calculates the nth Fibonacci number given its argument `num`. It uses
- * a recursive approach, calling itself with smaller arguments until reaching 1, when
- * it returns the original value directly.
+ * @description calculates the nth Fibonacci number by using a recursive approach,
+ * where the previous numbers are passed as arguments to the function.
  * 
- * @param { integer } num - 0-based index of the Fibonacci number to be computed.
+ * @param { integer } num - 0-based index of the Fibonacci sequence to compute, with
+ * values less than or equal to 1 returned directly and values greater than 1 computed
+ * as the sum of the previous two terms in the sequence.
  * 
- * @returns { integer } the nth Fibonacci number for a given integer `num`.
+ * @returns { integer } the nth Fibonacci number.
  */
 function fibonacci(num) {
     if (num <= 1) return num;
@@ -13,11 +14,11 @@ function fibonacci(num) {
 }
 
 /**
- * @description checks if a given number is prime by iteratively testing factors up
- * to sqrt(num) and checking for divisibility. If no factors are found, the number
- * is prime.
+ * @description determines whether a given number is prime or not by checking for
+ * divisibility by 2, 3, and other numbers up to the square root of the input number.
+ * If no factors are found, the number is returned as prime.
  * 
- * @param { integer } num - number being tested for primality.
+ * @param { number } num - 4-digit number to be tested for primality.
  * 
  * @returns { boolean } a boolean value indicating whether the input number is prime
  * or not.
@@ -35,14 +36,13 @@ function isPrime(num) {
 }
 
 /**
- * @description computes the factorial of a given integer `num` by recursively calling
- * itself with the argument `num - 1` until it reaches 0, at which point it returns
- * the result.
+ * @description computes the factorial of a given integer `num`. It uses recursion
+ * to calculate the factorial by multiplying the previous value by the next smaller
+ * integer until reaching 1 when `num` is 0.
  * 
- * @param { integer } num - value that the function will calculate the factorial of.
+ * @param { integer } num - for which the factorial is being calculated.
  * 
- * @returns { integer } the value of the given number factored into a product of
- * previous factorials.
+ * @returns { integer } the value of the given number's factorial.
  */
 function factorial(num) {
     if (num === 0) return 1;
@@ -51,38 +51,39 @@ function factorial(num) {
 
 /**
  * @description takes a string as input and returns its reversed version by splitting
- * it into individual characters, reversing their order, and joining them back into
- * a string.
+ * it into individual characters, reversing them, and then joining them back into a
+ * string.
  * 
  * @param { string } str - string to be reversed.
  * 
- * @returns { string } a string that is the reverse of the input string.
+ * @returns { string } a reversed string of characters, with each character in the
+ * original string placed in reverse order.
  */
 function reverseString(str) {
     return str.split("").reverse().join("");
 }
 
 /**
- * @description combines two input arrays into a single array by concatenating their
- * elements in a listwise manner.
+ * @description combines two arrays by returning a new array that contains all elements
+ * from both input arrays, in the order they were provided.
  * 
- * @param { array } arr1 - 1st array that will be merged with the 2nd array.
+ * @param { array } arr1 - 1st array to be merged with the second array in the function.
  * 
- * @param { array } arr2 - 2nd array to be merged with the contents of `arr1`.
+ * @param { array } arr2 - 2nd array to be merged with the elements of `arr1`.
  * 
- * @returns { array } a concatenation of both input arrays in a single array.
+ * @returns { array } a new array that combines the elements of both input arrays.
  */
 function mergeArrays(arr1, arr2) {
     return [...arr1, ...arr2];
 }
 
 /**
- * @description iteratively compares adjacent elements in an array and swaps them if
- * they are out of order, repeating this process until no more swaps are needed.
+ * @description iteratively sorts an array by comparing adjacent elements and swapping
+ * them if they are out of order, repeating the process until no more swaps are needed.
  * 
- * @param { array } arr - 1D array to be sorted by the bubble sort algorithm.
+ * @param { array } arr - 2D array that is to be sorted by the `bubbleSort()` function.
  * 
- * @returns { array } a sorted array of integers.
+ * @returns { array } a sorted array of elements.
  */
 function bubbleSort(arr) {
     const len = arr.length;
@@ -100,18 +101,20 @@ function bubbleSort(arr) {
 
 class Animal {
     /**
-     * @description establishes properties for an object based on user input.
+     * @description creates an object with two properties: `name` and `species`.
      * 
-     * @param { string } name - name of the creature.
+     * @param { string } name - name of the object being constructed.
      * 
-     * @param { string } species - animal's species in the constructor function.
+     * @param { string } species - species of the object being constructed in the
+     * constructor, and is used to assign the appropriate value to the `species` property
+     * of the resulting object.
      */
     constructor(name, species) {
         this.name = name;
         this.species = species;
     }
     /**
-     * @description logs the message "Animal sound" to the console.
+     * @description logs an animal sound to the console.
      */
     makeSound() {
         console.log("Animal sound");

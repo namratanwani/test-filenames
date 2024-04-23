@@ -1,14 +1,24 @@
 /**
- * @description calculates the nth Fibonacci number given the integer `num`. It
- * recurringly calls itself with arguments `-1` and `-2` until reaching the base case
- * where `num` is less than or equal to `1`, returning the value directly. Otherwise,
- * it computes and returns the sum of the previous two Fibonacci numbers.
+ * @description calculates the nth Fibonacci number by recursively calling itself
+ * with arguments num-1 and num-2, then returning the result.
  * 
- * @param { integer } num - 0-based index of the Fibonacci sequence to compute, with
- * values less than or equal to 1 returned directly and larger values computed as the
- * sum of the two previous terms in the sequence.
+ * @param { integer } num - 0-based index of the Fibonacci number to be computed.
  * 
- * @returns { integer } a sequence of numbers that follow the Fibonacci sequence pattern.
+ * @returns { `int`. } the nth Fibonacci number.
+ * 
+ * 	1/ If `num` is equal to or less than 1, the function returns `num` directly without
+ * any calculation. This means that the first few terms in the Fibonacci sequence can
+ * be computed directly without calling the function again.
+ * 	2/ For any positive integer `num`, the function returns the sum of the previous
+ * two terms in the Fibonacci sequence. This means that the function recursively calls
+ * itself until it reaches the base case, where it stops calling itself and returns
+ * the final term directly.
+ * 	3/ The function always returns an integer, regardless of the input value. This
+ * ensures that the output is always a whole number, which is important in many
+ * applications of the Fibonacci sequence.
+ * 	4/ The function is terminating, meaning that it will eventually stop calling
+ * itself and return a final term when `num` is sufficiently large. This makes it
+ * easier to work with large inputs without encountering infinite loops or other issues.
  */
 function fibonacci(num) {
     if (num <= 1) return num;
@@ -16,13 +26,14 @@ function fibonacci(num) {
 }
 
 /**
- * @description determines whether a given number is prime or not by checking for
- * divisibility by 2, 3, and other numbers up to the square root of the input value.
- * If none of these checks reveal a composite nature, the function returns `True`.
+ * @description verifies whether a given number is prime by testing for divisibility
+ * by 2, 3, and subsequent prime numbers up to and including the square root of the
+ * number. If no divisors are found, the function returns `true`.
  * 
- * @param { integer } num - 3-digit number to be tested for primality.
+ * @param { integer } num - integer value that is being tested for primality.
  * 
- * @returns { boolean } a boolean value indicating whether the given number is prime.
+ * @returns { boolean } a boolean value indicating whether the input number is prime
+ * or not.
  */
 function isPrime(num) {
     if (num <= 1) return false;
@@ -37,13 +48,12 @@ function isPrime(num) {
 }
 
 /**
- * @description computes the factorial of a given number by recursively calling itself
- * with the input minus one until it reaches the base case of `num = 0`.
+ * @description computes the factorial of a given integer `num`. It recursively calls
+ * itself until reaching 0, then returns the result.
  * 
- * @param { number } num - 0-based index of the recursive call to calculate the
- * factorial value.
+ * @param { integer } num -
  * 
- * @returns { integer } the factorial of the given number.
+ * @returns { integer } the factorial of the input number.
  */
 function factorial(num) {
     if (num === 0) return 1;
@@ -51,41 +61,40 @@ function factorial(num) {
 }
 
 /**
- * @description takes a string as input and returns its reversed version by splitting
- * it into individual characters, reversing them, and joining them back into a string.
+ * @description takes a string as input and reverses its characters, then rejoins
+ * them to produce the original string in reverse order.
  * 
  * @param { string } str - string to be reversed.
  * 
- * @returns { string } the original string with its characters reversed and joined
- * back into a single string.
+ * @returns { string } a reversed string of characters.
  */
 function reverseString(str) {
     return str.split("").reverse().join("");
 }
 
 /**
- * @description concatenates its two input arrays and returns the resulting array.
+ * @description combines two input arrays into a single array by concatenating them
+ * in a shallow manner, resulting in an array that contains all elements from both
+ * original arrays.
  * 
- * @param { array } arr1 - first array to be merged with the second array.
+ * @param { array } arr1 - 1st array that will be merged with the 2nd array.
  * 
- * @param { array } arr2 - 2nd array to be merged with `arr1`.
+ * @param { array } arr2 - 2nd array to be merged with the elements of the first
+ * array, `arr1, in the function `mergeArrays`.
  * 
- * @returns { array } a new array that contains all the elements of both input arrays
- * concatenated together.
+ * @returns { array } a concatenated array of the input arrays.
  */
 function mergeArrays(arr1, arr2) {
     return [...arr1, ...arr2];
 }
 
 /**
- * @description sorts an array of values by comparing adjacent elements and swapping
- * them if they are out of order, recursively applying the same process until no more
- * swaps are needed.
+ * @description sorts an array of integers by repeatedly comparing adjacent elements
+ * and swapping them if they are out of order based on their values.
  * 
- * @param { array } arr - 1D array to be sorted by the bubble sort algorithm implemented
- * in the function.
+ * @param { array } arr -
  * 
- * @returns { array } a sorted array of integers.
+ * @returns { array } a sorted array of the original input.
  */
 function bubbleSort(arr) {
     const len = arr.length;
@@ -103,20 +112,18 @@ function bubbleSort(arr) {
 
 class Animal {
     /**
-     * @description creates an object with properties `name` and `species`.
+     * @description initializes an object's properties with given values: `name` and `species`.
      * 
-     * @param { string } name - name of the entity being constructed and is stored as a
-     * property of the constructor object.
+     * @param { string } name - name of the entity to which the constructor belongs.
      * 
-     * @param { string } species - species of the object being constructed in the constructor
-     * function, and is assigned to the `species` field of the object.
+     * @param { string } species - animal's species in the constructor function.
      */
     constructor(name, species) {
         this.name = name;
         this.species = species;
     }
     /**
-     * @description logs the message "Animal sound" to the console.
+     * @description logs the string "Animal sound" to the console.
      */
     makeSound() {
         console.log("Animal sound");
