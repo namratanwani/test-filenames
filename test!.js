@@ -1,11 +1,18 @@
 /**
- * @description calculates the nth Fibonacci number given its argument `num`. It uses
- * a recursive approach where the function calls itself with smaller arguments until
- * it reaches the base case of `num <= 1`, at which point it returns the value directly.
+ * @description computes the nth Fibonacci number by recurrence, starting with the
+ * initial values 0 and 1.
  * 
- * @param { integer } num - 0-based index of the Fibonacci sequence to generate.
+ * @param { integer } num - 0-based index of the Fibonacci sequence to compute,
+ * determining the resulting sequence of numbers returned by the function.
  * 
- * @returns { integer } the nth Fibonacci number, where `n` is the input parameter.
+ * @returns { `int`. } the nth Fibonacci number, calculated using the recursive formula.
+ * 
+ * 		- If `num` is 1 or less, the output is simply `num`.
+ * 		- Otherwise, the output is the sum of the fibonacci numbers of degrees 1 and 2
+ * (i.e., `fibonacci(num - 1)` and `fibonacci(num - 2`)).
+ * 
+ * 	The returned value is an integer, which can be used for further mathematical
+ * operations or for other purposes.
  */
 function fibonacci(num) {
     if (num <= 1) return num;
@@ -13,14 +20,14 @@ function fibonacci(num) {
 }
 
 /**
- * @description determines whether a given number is prime or not. It checks the
- * number for divisibility by 2 and 3, and then uses a trial division approach to
- * check for primality based on factors of 5 and its multiples.
+ * @description determines whether a given number is prime or not by iteratively
+ * testing divisors up to the square root of the input number and checking for factors.
  * 
- * @param { integer } num - 2-digit positive integer for which the function checks
- * if it is prime or not.
+ * @param { integer } num - 2-digit integer value being tested for primality using
+ * various methods, starting with smaller numbers and increasing the test range until
+ * the number is confirmed to be prime or identified as composite.
  * 
- * @returns { boolean } a boolean value indicating whether the input number is prime
+ * @returns { boolean } a boolean value indicating whether the given number is prime
  * or not.
  */
 function isPrime(num) {
@@ -36,14 +43,13 @@ function isPrime(num) {
 }
 
 /**
- * @description calculates the factorial of a given number recursively, with base
- * case of 0 returning 1 and otherwise returning the product of the current number
- * and the factorial of its predecessor.
+ * @description calculates the factorial of a given number by recursively calling
+ * itself with the input minus one until it reaches the base case of `num = 0`, where
+ * it returns 1.
  * 
- * @param { integer } num - value of the factorial function being calculated, which
- * determines the recursive calculation performed by the function.
+ * @param { integer } num - 3-digit number whose factorial is being calculated.
  * 
- * @returns { integer } the value of `num!`.
+ * @returns { integer } the value of the given number's factorial.
  */
 function factorial(num) {
     if (num === 0) return 1;
@@ -51,8 +57,8 @@ function factorial(num) {
 }
 
 /**
- * @description takes a string as input and returns its reverse by splitting it into
- * individual characters, reversing them, and joining them back into a string.
+ * @description reverses a given string by splitting it into individual characters,
+ * reversing them, and then joining them back into a string.
  * 
  * @param { string } str - string to be reversed.
  * 
@@ -63,27 +69,28 @@ function reverseString(str) {
 }
 
 /**
- * @description combines two input arrays into a single array by concatenating them
- * using the spread operator ... .
+ * @description concatenates two arrays by spreading their elements into a new array
+ * using the spread operator....
  * 
- * @param { array } arr1 - 1st array that will be merged with the 2nd array.
+ * @param { array } arr1 - 1st array that will be merged with the second array upon
+ * execution of the `mergeArrays()` function.
  * 
- * @param { array } arr2 - 2nd array to be merged with the elements of `arr1`.
+ * @param { array } arr2 - 2nd array to be merged with the first array in the function
+ * `mergeArrays`.
  * 
- * @returns { array } a new array that combines the elements of both input arrays in
- * a single array.
+ * @returns { array } a concatenation of both input arrays in a single array.
  */
 function mergeArrays(arr1, arr2) {
     return [...arr1, ...arr2];
 }
 
 /**
- * @description iterates through an array, comparing adjacent elements and swapping
- * them if they are out of order. It repeats this process until no more swaps are needed.
+ * @description sorts an array of numbers by repeatedly swapping adjacent elements
+ * if they are out of order, and repeats this process until no more swaps are needed.
  * 
- * @param { array } arr -
+ * @param { array } arr - 2D array that is to be sorted using the bubble sort algorithm.
  * 
- * @returns { array } a sorted array of integers.
+ * @returns { array } a sorted array of the input values.
  */
 function bubbleSort(arr) {
     const len = arr.length;
@@ -101,21 +108,19 @@ function bubbleSort(arr) {
 
 class Animal {
     /**
-     * @description creates an instance of a class by assigning values to its properties
-     * `name` and `species`.
+     * @description initializes an object with a given name and species.
      * 
-     * @param { string } name - name of the object being constructed and is assigned to
-     * the `name` field of the object instance.
+     * @param { string } name - name of the entity being constructed.
      * 
-     * @param { string } species - species of an object, which is then assigned to the
-     * `species` property of the constructed object.
+     * @param { string } species - species of the object being constructed and assigns
+     * it to the `species` field of the constructor's output.
      */
     constructor(name, species) {
         this.name = name;
         this.species = species;
     }
     /**
-     * @description logs the string "Animal sound" to the console.
+     * @description logs the message "Animal sound" to the console.
      */
     makeSound() {
         console.log("Animal sound");
